@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Instinctive Drives Chart Builder</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Instictive Drives Chart Builder</h1>
+  </header>
+
+  <div class="main-container">
+
+
+    <div class="chart-container">
+
+      <input class="name" placeholder="Name"></input>
+
+      <div class="top">
+        <div class="1 col up"><div class="verify-sc score">&nbsp;</div><img class="arrow-up" src="images/arrow.png"></img></div>
+        <div class="2 col up"><div class="authenticate-sc score">&nbsp;</div><img class="arrow-up" src="images/arrow.png"></img></div>
+        <div class="3 col up"><div class="complete-sc score">&nbsp;</div><img class="arrow-up" src="images/arrow.png"></img></div>
+        <div class="4 col up"><div class="improvise-sc score">&nbsp;</div><img class="arrow-up" src="images/arrow.png"></img></div>
+      </div>
+
+      <div class="middle">
+
+        <div id="verify" class="verify title">
+          <select>
+            <option value="start">-</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+          </select>
+          <p>Verify</p>
+        </div>
+
+        <div class="authenticate title">
+          <select>
+            <option value="start">-</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+          </select>
+          <p>Authenticate</p>
+        </div>
+
+        <div class="complete title">
+          <select>
+            <option value="start">-</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+          </select>
+          <p>Complete</p>
+        </div>
+
+        <div class="improvise title">
+          <select>
+            <option value="start">-</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+          </select>
+          <p>Improvise</p>
+        </div>
+
+      </div>
+
+      <div class="bottom">
+        <div class="5 col down"><div class="verify-sc score"></div><img class="arrow-down" src="images/arrow.png"></img></div>
+        <div class="6 col down"><div class="authenticate-sc score"></div><img class="arrow-down" src="images/arrow.png"></img></div>
+        <div class="7 col down"><div class="complete-sc score"></div><img class="arrow-down" src="images/arrow.png"></img></div>
+        <div class="8 col down"><div class="improvise-sc score"></div><img class="arrow-down" src="images/arrow.png"></img></div>
+      </div>
+
+    </div>
+
+
+  </div>
+
+  <div id="create-container">
+    <button id="create">Create chart +</button>
+    <button id="reset">Reset</button>
+  </div>
+
+  <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="https://unpkg.com/tilt.js@1.2.1/dest/tilt.jquery.min.js"></script>
+  <script src="js/main.js" charset="utf-8"></script>
+
+</body>
+</html>
