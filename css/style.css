@@ -137,7 +137,7 @@ p {
 
 .score {
   display: block;
-  height:200px;
+  height: 5%;
   width: 100%;
 }
 
@@ -176,8 +176,17 @@ select {
   outline: none;
   cursor: pointer;
   background-color: rgba(255, 0, 0, 0);
+  -moz-appearance: none;
 }
 
 .hide {
   display: none;
 }
+
+/* #i2 {
+  display: none;
+}
+
+#i3 {
+  display: none;
+} */
