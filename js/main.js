@@ -3,28 +3,15 @@
 let input;
 let chartId;
 let chartsOnBoard = 1;
+let heightVal;
 
 ////////////////////////////// THE FUNCTIONS ///////////////////////////////////
 
-const determineGraph = function(chart, metric, colUp, colDown) {
+const determineGraph = function(chart, metric, colUp, colDown, heightVal) {
 
   if (input > 5) {
 
-    if (input === 6) {
-    $(`#${chart} .${colUp}`).find(`.${metric}`).attr('style','height: 25%');
-    }
-
-    if (input === 7) {
-    $(`#${chart} .${colUp}`).find(`.${metric}`).attr('style','height: 50%');
-    }
-
-    if (input === 8) {
-    $(`#${chart} .${colUp}`).find(`.${metric}`).attr('style','height: 75%');
-    }
-
-    if (input === 9) {
-    $(`#${chart} .${colUp}`).find(`.${metric}`).attr('style','height: 100%');
-    }
+    $(`#${chart} .${colUp}`).find(`.${metric}`).attr(`style`,`height: ${heightVal}`);
 
 // Hide upward score column and show downward arrow if opposing direction selected
     $(`#${chart} .${colUp}`).find('.arrow-up').attr('style','display: block;');
@@ -35,21 +22,7 @@ const determineGraph = function(chart, metric, colUp, colDown) {
 
   if (input < 5) {
 
-    if (input === 4) {
-    $(`#${chart} .${colDown}`).find(`.${metric}`).attr('style','height: 25%');
-    }
-
-    if (input === 3) {
-    $(`#${chart} .${colDown}`).find(`.${metric}`).attr('style','height: 50%');
-    }
-
-    if (input === 2) {
-    $(`#${chart} .${colDown}`).find(`.${metric}`).attr('style','height: 75%');
-    }
-
-    if (input === 1) {
-    $(`#${chart} .${colDown}`).find(`.${metric}`).attr('style','height: 100%');
-    }
+    $(`#${chart} .${colDown}`).find(`.${metric}`).attr(`style`,`height: ${heightVal}`);
 
 // Hide upward score column and show downward arrow if opposing direction selected
     $(`#${chart} .${colDown}`).find('.arrow-down').attr('style','display: block;');
@@ -82,6 +55,8 @@ const resetChart = function() {
   $('#i2').hide();
   $('#i3').hide();
 
+  $('input').val('');
+
   chartsOnBoard = 1;
 
 };
@@ -92,7 +67,8 @@ $('.verify').find('select').change(function() {
 
   chartId = $(this).parent().parent().parent().attr('id');
   input = Number($(this).find('option:selected').text());
-  determineGraph(chartId, 'verify-sc', '1', '5');
+  heightVal = $(this).find('option:selected').val();
+  determineGraph(chartId, 'verify-sc', '1', '5', heightVal);
 
 });
 
@@ -100,7 +76,8 @@ $('.authenticate').find('select').change(function() {
 
   chartId = $(this).parent().parent().parent().attr('id');
   input = Number($(this).find('option:selected').text());
-  determineGraph(chartId, 'authenticate-sc', '2', '6');
+  heightVal = $(this).find('option:selected').val();
+  determineGraph(chartId, 'authenticate-sc', '2', '6', heightVal);
 
 });
 
@@ -108,7 +85,8 @@ $('.complete').find('select').change(function() {
 
   chartId = $(this).parent().parent().parent().attr('id');
   input = Number($(this).find('option:selected').text());
-  determineGraph(chartId, 'complete-sc', '3', '7');
+  heightVal = $(this).find('option:selected').val();
+  determineGraph(chartId, 'complete-sc', '3', '7', heightVal);
 
 });
 
@@ -116,10 +94,13 @@ $('.improvise').find('select').change(function() {
 
   chartId = $(this).parent().parent().parent().attr('id');
   input = Number($(this).find('option:selected').text());
-  determineGraph(chartId, 'improvise-sc', '4', '8');
+  heightVal = $(this).find('option:selected').val();
+  determineGraph(chartId, 'improvise-sc', '4', '8', heightVal);
 
 });
 
+
+// Create chart button and function
 $('#i2').hide();
 $('#i3').hide();
 
@@ -137,7 +118,7 @@ $('#create').click( function() {
 
 });
 
-
+// Reset chart button and function
 $('#reset').click(function(){
 
   resetChart();
