@@ -99,7 +99,6 @@ $('.improvise').find('select').change(function() {
 
 });
 
-
 // Create chart button and function
 $('#i2').hide();
 $('#i3').hide();
