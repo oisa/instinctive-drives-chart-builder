@@ -8,12 +8,12 @@ body {
 
 header {
   text-align: center;
-  margin-bottom: 50px;
+  margin: 0 50px;
 }
 
 h1 {
   font-size: 28px;
-  font-style: italic;
+  font-weight: 400;
 }
 
 p {
